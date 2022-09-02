@@ -4,7 +4,7 @@
 }
 
 body {
-  position: relative;
+  font-family: Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   padding: 2rem;
