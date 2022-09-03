@@ -5,9 +5,9 @@ let num = 0;
 function spark(){
   const bg = document.querySelector(".bg");
   let count = setCount.value;
-  let red = Math.floor(Math.random() * 257);
-  let blue = Math.floor(Math.random() * 257);
-  let green = Math.floor(Math.random() * 257);
+  let red = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
   let rgb = `rgb(${red}, ${green}, ${blue})`;
   
   bg.style.backgroundColor = rgb;
