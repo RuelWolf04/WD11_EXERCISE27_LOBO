@@ -51,7 +51,7 @@ const shapes = document.querySelectorAll(".shaper");
   list.textContent = '';
   count = 0;
   num = 0;
-  setCount.value = 0;
+  setCount.value = 10;
   counter.textContent = count;
   clearInterval(stopColor);
 
