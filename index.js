@@ -14,12 +14,13 @@ function spark(){
 
   num += 1;
   count -= num;
-  console.log(count);
+  // console.log(count);
   if(count <= 0){
     clearInterval(stopColor);
   }
 
   newListColor(rgb, count);
+  shapeColor(rgb)
 }
 
 function stop(){
@@ -45,12 +46,29 @@ counter.textContent = count;
 
 function reset(){
 const list = document.querySelector("#colorsContainer");
+const shapes = document.querySelectorAll(".shaper");
+
   list.textContent = '';
   count = 0;
   num = 0;
   setCount.value = 0;
   counter.textContent = count;
   clearInterval(stopColor);
+
+
+  shapes.forEach(shape => {
+    shape.style.fill = `rgb(221, 221, 253)`
+});
 }
 
 
+
+function shapeColor(rgb){
+  const shapes = document.querySelectorAll(".shaper");
+shapes.forEach(shape => {
+  shape.addEventListener('mouseenter', () => 
+    shape.style.fill = `${rgb}`
+  )
+  
+});
+}

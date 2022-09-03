@@ -1,3 +1,8 @@
+:root{
+  --transform-1: translateX(-25%);
+  --transform-2: translateX(-15%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +14,8 @@ body {
   justify-content: center;
   padding: 2rem;
   gap: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
 
@@ -21,9 +28,11 @@ body {
   place-items: center;
   background-color: lightblue;
   gap: 10px;
+  z-index: 1;
 }
 
 .history {
+  z-index: 1;
   width: 300px;
   height: 400px;
   overflow: auto;
@@ -31,6 +40,7 @@ body {
   border-radius: 10px;
   text-align: center;
   padding: 1rem;
+  background-color: #fefefe;
 }
 
 button {
@@ -67,3 +77,78 @@ label {
   align-items: center;
   gap: 20px;
 }
+
+.groupSvg {
+  position: absolute;
+  width: 250%;
+  display: flex;
+  
+}
+
+.svgs {
+  transform: var(--transform-1);
+  top: 0;
+}
+
+.svgs1 {
+  transform: var(--transform-2);
+  top: 20%;
+}
+
+.svgs2 {
+  transform: var(--transform-1);
+
+  top: 40%;
+}
+
+.svgs3 {
+  top: 60%;
+  transform: var(--transform-2);
+}
+
+.svgs4 {
+  top: 80%;
+  transform: var(--transform-1);
+}
+
+.svgs5 {
+  top: 100%;
+  transform: var(--transform-2);
+}
+
+.svgs6 {
+  top: 120%;
+  transform: var(--transform-1);
+}
+
+.svgs7 {
+  top: 140%;
+  transform: var(--transform-2);
+}
+
+.svg {
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  animation: slide 15s linear infinite;
+}
+
+
+.svg .shape .shaper {
+  fill: rgb(221, 221, 253);
+  transition: .09s linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* .svg .shape .shaper:hover {
+  fill: aqua;
+} */
+
