@@ -26,7 +26,7 @@ body {
   border-radius: 10px;
   display: grid;
   place-items: center;
-  background-color: lightblue;
+  background-color: rgb(173, 216, 230);
   gap: 10px;
   z-index: 1;
 }
@@ -138,6 +138,20 @@ label {
   fill: rgb(221, 221, 253);
   transition: .09s linear;
 }
+
+.view-container{
+  display: flex;
+  gap: 20px;
+}
+
+.view {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
 
 @keyframes slide {
   0% {
