@@ -67,9 +67,10 @@ function newListColor(newRGB){
 
 function shapeColor(rgb){
     shapes.forEach(shape => {
-    shape.addEventListener('mouseenter', () => 
+      // removing hover effect 
+    // shape.addEventListener('mouseenter', () => 
       shape.style.fill = rgb
-    )
+    // )
   })
   }
 
