@@ -17,14 +17,14 @@ const setDuration = document.querySelector("#timer")
 
 startBtn.addEventListener("click", () => {
   let intervalValue = (interval.value * 1000)
-  let x = (intervalValue / 1000)
   let y = (intervalValue / 1000)
+  let x = (intervalValue / 1000)
   setIntervalID = setInterval(() => {
-    if(x <= 0){
+    if(x < 1){
       x = y
     }
+    intervalCount.textContent = x
     x--
-      intervalCount.textContent = x
   }, 1000);
 
 
@@ -82,6 +82,7 @@ function duration(){
       clearInterval(intervalID)
       clearInterval(setIntervalID)
       stopBtn.setAttribute("disabled", '')
+      intervalCount.textContent = 0
     }
     viewCount.textContent = newDuration
     newDuration--
@@ -112,4 +113,16 @@ resetBtn.addEventListener("click", () => {
   viewCount.textContent = 0
   list.innerHTML = ''
   intervalCount.textContent = 0
+  bg.style.backgroundColor = `rgb(173, 216, 230)`
+
+
+  shapes.forEach(shape => {
+      shape.style.fill = `rgb(221, 221, 253)`
+    
+        shape.addEventListener('mouseenter', () => 
+          shape.style.fill = `rgb(221, 221, 253)`
+        )
+      
+
+  })
 })
