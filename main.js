@@ -17,6 +17,9 @@ const setDuration = document.querySelector("#timer")
 
 startBtn.addEventListener("click", () => {
   let intervalValue = (interval.value * 1000)
+  duration()
+  setColor = setInterval(changeBg, intervalValue)
+
   let y = (intervalValue / 1000)
   let x = (intervalValue / 1000)
   setIntervalID = setInterval(() => {
@@ -28,8 +31,7 @@ startBtn.addEventListener("click", () => {
   }, 1000);
 
 
-  setColor = setInterval(changeBg, intervalValue)
-  duration()
+  
   
 
 
@@ -78,6 +80,7 @@ function duration(){
   let newDuration = setDuration.value
   
   intervalID = setInterval( () => {
+    viewCount.textContent = newDuration
     if(newDuration <= 0){
       clearInterval(setColor)
       clearInterval(intervalID)
@@ -85,8 +88,8 @@ function duration(){
       stopBtn.setAttribute("disabled", '')
       intervalCount.textContent = 0
     }
-    viewCount.textContent = newDuration
     newDuration--
+    
   }, 1000)
 }
 
