@@ -16,19 +16,28 @@ const setDuration = document.querySelector("#timer")
 
 
 startBtn.addEventListener("click", () => {
-  const intervalValue = (interval.value * 1000)
+  let intervalValue = (interval.value * 1000)
+  let x = (intervalValue / 1000)
+  let y = (intervalValue / 1000)
+  setIntervalID = setInterval(() => {
+    if(x <= 0){
+      x = y
+    }
+    x--
+      intervalCount.textContent = x
+  }, 1000);
+
+
   setColor = setInterval(changeBg, intervalValue)
   duration()
-
-  let n = setDuration.value;
-
   
+
+
   startBtn.setAttribute("disabled", '')
   stopBtn.removeAttribute("disabled")
   resetBtn.removeAttribute("disabled")
   interval.setAttribute("disabled", '')
   setDuration.setAttribute("disabled", '')
-  intervalFunction(intervalValue / 1000)
 })
 
 //handles picking random color in rgb values
@@ -71,6 +80,7 @@ function duration(){
     if(newDuration <= 0){
       clearInterval(setColor)
       clearInterval(intervalID)
+      clearInterval(setIntervalID)
       stopBtn.setAttribute("disabled", '')
     }
     viewCount.textContent = newDuration
@@ -78,22 +88,11 @@ function duration(){
   }, 1000)
 }
 
-function intervalFunction(intervalValue){
-  setIntervalID = setInterval( function(){
-
-    const y = intervalValue
-    let x = intervalValue
-    if(x > 0){
-      intervalValue -= 1
-      intervalCount.textContent = x
-    }
-  }, 1000, 4);
-}
 
 stopBtn.addEventListener('click', () =>{
   clearInterval(setColor)
   clearInterval(intervalID)
-  clearInterval(setIntervalID)
+  // clearInterval(setIntervalID)
 
   stopBtn.setAttribute("disabled", '')
 })
